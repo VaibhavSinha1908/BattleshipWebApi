@@ -1,8 +1,10 @@
-﻿namespace WebApiBattleShip.Models
+﻿using System.Net;
+
+namespace WebApiBattleShip.Models
 {
     public class Response
     {
-        public int StatusCode { get; set; }
+        public HttpStatusCode StatusCode { get; set; }
         public string Message { get; set; }
     }
 

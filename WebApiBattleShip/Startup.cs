@@ -28,7 +28,7 @@ namespace WebApiBattleShip
             services.AddSingleton<Board>();
             services.AddSingleton<BoardGrid>();
             services.AddSingleton<BattleshipBoardGame>();
-
+            services.AddSingleton<Response>();
             services.AddScoped<IServiceHelper, ServiceHelper>();
             services.AddScoped<IBattleshipService, BattleshipService>();
 

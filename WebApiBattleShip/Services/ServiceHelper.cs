@@ -15,13 +15,14 @@ namespace WebApiBattleShip.Services
 
         private readonly ILogger<ServiceHelper> logger;
         private BattleshipBoardGame battleshipBoardGame;
+        private readonly Response response;
 
-
-        public ServiceHelper(ILogger<ServiceHelper> logger, BattleshipBoardGame battleshipBoardGame)
+        public ServiceHelper(ILogger<ServiceHelper> logger, BattleshipBoardGame battleshipBoardGame, Response response)
         {
 
             this.logger = logger;
             this.battleshipBoardGame = battleshipBoardGame;
+            this.response = response;
         }
 
         public async Task<bool> AddShipHorizontally(ShipAddRequest request, Board board)
@@ -95,14 +96,17 @@ namespace WebApiBattleShip.Services
 
             for (int i = 0; i < Length; i++)
             {
-                if (horizontalPos > 10)
+                if (horizontalPos > 9)
                 {
+                    response.Message = ResponseMessages.SHIP_OUTOF_BOUNDS;
                     return false;
                 }
 
                 if (grid[verticalPos][horizontalPos].OccupiedStatus == OccupiedStatus.Occupied)
+                {
+                    response.Message = ResponseMessages.SHIP_OVERLAPPING;
                     return false;
-
+                }
                 //increment vertical index.
                 horizontalPos++;
             }
@@ -162,6 +166,7 @@ namespace WebApiBattleShip.Services
 
                 //Add Successful.
                 logger.LogInformation($"Ship : {serializeRequest} was added successfully!");
+                response.Message = ResponseMessages.SHIP_ADDED;
                 return true;
             }
 
@@ -178,14 +183,17 @@ namespace WebApiBattleShip.Services
 
             for (int i = 0; i < Length; i++)
             {
-                if (verticalPos > 10)
+                if (verticalPos > 9)
                 {
+                    response.Message = ResponseMessages.SHIP_OUTOF_BOUNDS;
                     return false;
                 }
 
                 if (grid[verticalPos][horizontalPos].OccupiedStatus == OccupiedStatus.Occupied)
+                {
+                    response.Message = ResponseMessages.SHIP_OVERLAPPING;
                     return false;
-
+                }
                 //increment vertical index.
                 verticalPos++;
             }
@@ -202,21 +210,43 @@ namespace WebApiBattleShip.Services
 
             //check if the coordinates are valid
             if (!int.TryParse(request.VerticalStartingPoint, out v))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
             else if (!int.TryParse(request.HorizontalStartingPoint, out h))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
             else
             {
-                if (v > 10 || v < 0)
+                if (v > 9 || v < 0)
+                {
+                    response.Message = ResponseMessages.INVALID_REQUEST;
                     return false;
-                if (h > 10 || h < 0)
+                }
+                if (h > 9 || h < 0)
+                {
+                    response.Message = ResponseMessages.INVALID_REQUEST;
                     return false;
-
+                }
             }
             if (!int.TryParse(request.Length, out l))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
+            else if (l <= 0)
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
+                return false;
+            }
             if (string.IsNullOrEmpty(request.Orientation))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
             else
             {
                 if (request.Orientation.ToLower() == nameof(Orientation.Horizontal).ToLower() ||
@@ -228,8 +258,12 @@ namespace WebApiBattleShip.Services
                     return true;
                 }
             }
+
+            response.Message = ResponseMessages.INVALID_REQUEST;
             return false;
         }
+
+
 
         public async Task<bool> IsRequestValid(AttackRequest request)
         {
@@ -239,16 +273,28 @@ namespace WebApiBattleShip.Services
             //check if the coordinates are valid
 
             if (!int.TryParse(request.VerticalPosition, out v))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
             else if (!int.TryParse(request.HorizontalPosition, out h))
+            {
+                response.Message = ResponseMessages.INVALID_REQUEST;
                 return false;
+            }
             else
             {
                 if (v > 10 || v < 0)
+                {
+                    response.Message = ResponseMessages.INVALID_REQUEST;
                     return false;
-                if (h > 10 || h < 0)
-                    return false;
+                }
 
+                if (h > 10 || h < 0)
+                {
+                    response.Message = ResponseMessages.INVALID_REQUEST;
+                    return false;
+                }
             }
 
             //All good...
