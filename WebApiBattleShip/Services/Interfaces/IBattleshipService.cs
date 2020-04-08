@@ -8,6 +8,6 @@ namespace WebApiBattleShip.Services.Interfaces
 
         Task<bool> AddShip(Models.Request.ShipAddRequest request);
 
-        bool AttackShip();
+        Task<bool> AttackShip(Models.RequestModels.AttackRequest request);
     }
 }

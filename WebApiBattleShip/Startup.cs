@@ -23,12 +23,13 @@ namespace WebApiBattleShip
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //For persisting the data across multiple requests.
+            //Static objects for persisting the data across multiple requests.
             services.AddSingleton<Cell>();
             services.AddSingleton<Board>();
             services.AddSingleton<BoardGrid>();
             services.AddSingleton<BattleshipBoardGame>();
 
+            services.AddScoped<IServiceHelper, ServiceHelper>();
             services.AddScoped<IBattleshipService, BattleshipService>();
 
         }

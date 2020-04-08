@@ -692,7 +692,6 @@ C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\bin\Debug\net461
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\bin\Debug\net461\System.Xml.XmlSerializer.dll
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\bin\Debug\net461\System.Xml.XPath.dll
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\bin\Debug\net461\System.Xml.XPath.XDocument.dll
-C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\obj\Debug\net461\WebApiBattleShip.csprojAssemblyReference.cache
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\obj\Debug\net461\WebApiBattleShip.exe.config
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\obj\Debug\net461\WebApiBattleShip.RazorAssemblyInfo.cache
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\obj\Debug\net461\WebApiBattleShip.RazorAssemblyInfo.cs

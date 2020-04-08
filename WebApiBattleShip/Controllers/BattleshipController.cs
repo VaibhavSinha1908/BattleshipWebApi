@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using WebApiBattleShip.Models.Request;
+using WebApiBattleShip.Models.RequestModels;
 using WebApiBattleShip.Services.Interfaces;
 
 namespace WebApiBattleShip.Controllers
@@ -48,6 +49,29 @@ namespace WebApiBattleShip.Controllers
             }
             return BadRequest("AddShip() failed.");
         }
+
+
+        [HttpPost]
+        [Route("AttackShip")]
+        public async Task<IActionResult> AttackShip([FromBody] AttackRequest request)
+        {
+            try
+            {
+                var result = await battleshipService.AttackShip(request);
+                if (result)
+                    return Ok("Hit!");
+                else
+                    return Ok("Miss!");
+
+            }
+            catch (System.Exception ex)
+            {
+                logger.LogError(ex.Message, ex.StackTrace);
+                BadRequest(ex);
+            }
+            return BadRequest("AddShip() failed.");
+        }
+
 
 
 
