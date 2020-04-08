@@ -4,16 +4,16 @@ namespace WebApiBattleShip.Models.Request
 {
     public class ShipAddRequest
     {
-        [JsonProperty("VerticalHeadPosition")]
+        [JsonProperty("verticalHeadPosition")]
         public string VerticalStartingPoint { get; set; }
 
-        [JsonProperty("HorizontalHeadPosition")]
+        [JsonProperty("horizontalHeadPosition")]
         public string HorizontalStartingPoint { get; set; }
 
-        [JsonProperty("Size")]
+        [JsonProperty("size")]
         public string Length { get; set; }
 
-        [JsonProperty("Orientation")]
+        [JsonProperty("orientation")]
         public string Orientation { get; set; }
     }
 }

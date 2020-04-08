@@ -21,11 +21,11 @@ namespace WebApiBattleShip.Models
         {
             try
             {
-                for (int i = 1; i <= 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     var cellList = new List<Cell>();
 
-                    for (int j = 1; j <= 10; j++)
+                    for (int j = 0; j < 10; j++)
                     {
                         cellList.Add(AddCell(i, j));
                     }

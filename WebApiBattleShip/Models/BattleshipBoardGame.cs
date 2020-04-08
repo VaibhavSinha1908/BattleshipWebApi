@@ -10,5 +10,10 @@ namespace WebApiBattleShip.Models
 
         //List of ships.
         public List<BattleShip> Ships { get; set; }
+
+        public BattleshipBoardGame()
+        {
+            Ships = new List<BattleShip>();
+        }
     }
 }
