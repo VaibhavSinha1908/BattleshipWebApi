@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/WebApiBattleShip
+/WebApiBattleShip/bin/Release/net461
+/WebApiBattleShip/obj/Release/net461

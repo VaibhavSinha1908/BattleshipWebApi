@@ -24,9 +24,8 @@ namespace WebApiBattleShip
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             //Static objects for persisting the data across multiple requests.
-            services.AddSingleton<Cell>();
-            services.AddSingleton<Board>();
-            services.AddSingleton<BoardGrid>();
+
+
             services.AddSingleton<BattleshipBoardGame>();
             services.AddSingleton<Response>();
             services.AddScoped<IServiceHelper, ServiceHelper>();
