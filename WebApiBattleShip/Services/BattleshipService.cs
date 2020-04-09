@@ -98,6 +98,9 @@ namespace WebApiBattleShip.Services
         //Process an attack on the board.
         public async Task<bool> AttackShip(AttackRequest request)
         {
+            var serializeRequest = JsonConvert.SerializeObject(request);
+            logger.LogInformation($"Starting attack for request:{serializeRequest}");
+
             bool result = false;
             var board = battleshipBoardGame.Board;
 
@@ -124,6 +127,7 @@ namespace WebApiBattleShip.Services
                     ships.ToArray()[0].ShipPosition.FirstOrDefault(x => x.HIndex == horizontalPos && x.VIndex == verticalPos).Hit = true;
 
                     //set repsonse to True.
+                    logger.LogInformation($"Attack Hit Ship:{serializeRequest}");
                     response.Message = ResponseMessages.ATTACK_SUCCESSFUL;
                     result = true;
                     var shipUnderAttack = ships.ToArray()[0];
@@ -133,6 +137,7 @@ namespace WebApiBattleShip.Services
                     var ship = ships.ToArray()[0];
                     if (count == ships.ToArray()[0].LengthOfShip)
                     {
+                        logger.LogInformation($"Attack Sunk Ship:{serializeRequest}");
                         response.Message = ResponseMessages.ATTACK_SUNK_SHIP;
                         result = true;
 
@@ -149,9 +154,13 @@ namespace WebApiBattleShip.Services
 
                 }
             }
+            else if (!validRequest)
+                logger.LogInformation($"Invalid request for AttackShip:{serializeRequest}");
+
             if (validRequest && !result)
             {
                 response.Message = ResponseMessages.ATTACK_MISS;
+                logger.LogInformation($"Attack Miss Ship:{serializeRequest}");
             }
 
             return result;
