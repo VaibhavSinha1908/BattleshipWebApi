@@ -8,6 +8,10 @@
     <DocumentationFile>C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\WebApiBattleShip.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleShip\WebApiBattleShip.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Logging\**" />
     <Content Remove="Logging\**" />
