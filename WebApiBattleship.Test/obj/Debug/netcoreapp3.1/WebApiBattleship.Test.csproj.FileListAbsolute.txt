@@ -197,3 +197,9 @@ C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\n
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Xml.dll
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\WebApiBattleShip.pdb
 C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\WebApiBattleShip.exe.config
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\vaibhav\source\repos\BattleshipWebApi\WebApiBattleship.Test\bin\Debug\netcoreapp3.1\WebApiBattleShip.xml
