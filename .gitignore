@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/WebApiBattleShip
+/WebApiBattleShip/bin/Release/net461
+/WebApiBattleShip/obj/Release/net461

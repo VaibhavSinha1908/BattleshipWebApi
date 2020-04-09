@@ -1,0 +1,36 @@
+2020-04-07 21:29:04.4875||DEBUG|WebApiBattleShip.Program|Init-Start 
+2020-04-07 21:29:05.9516||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\vaibhav\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2020-04-07 21:29:07.4605|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:58479/  0 
+2020-04-07 21:29:07.4605|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44384/api/values   
+2020-04-07 21:29:07.6375|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 175.6886ms 200  
+2020-04-07 21:29:07.6985|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 248.4375ms 404  
+2020-04-07 21:31:55.3948|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44384/api/battleship   
+2020-04-07 21:31:55.4068|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:31:55.4828|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Battleship"}. Executing action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) 
+2020-04-07 21:31:55.5248|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) - Validation state: Valid 
+2020-04-07 21:31:55.5248||ERROR|WebApiBattleShip.Controllers.BattleshipController|Sample ExcetionOne of the identified items was in an invalid format. 
+2020-04-07 21:31:55.5248|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5.536ms. 
+2020-04-07 21:31:55.5828|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'null'. 
+2020-04-07 21:31:55.6008|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) in 109.1223ms 
+2020-04-07 21:31:55.6028|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:31:55.6028|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 220.9961ms 204  
+2020-04-07 21:32:46.6049|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44384/api/battleship   
+2020-04-07 21:32:46.6049|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:32:46.6049|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Battleship"}. Executing action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) 
+2020-04-07 21:32:46.6049|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) - Validation state: Valid 
+2020-04-07 21:32:46.6199||ERROR|WebApiBattleShip.Controllers.BattleshipController|Sample ExcetionOne of the identified items was in an invalid format. 
+2020-04-07 21:32:46.6199|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4.4596ms. 
+2020-04-07 21:32:46.6199|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'null'. 
+2020-04-07 21:32:46.6199|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) in 15.4983ms 
+2020-04-07 21:32:46.6199|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:32:46.6349|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 30.4051ms 204  
+2020-04-07 21:32:48.0219|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:44384/api/battleship   
+2020-04-07 21:32:48.0249|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:32:48.0249|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Battleship"}. Executing action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) 
+2020-04-07 21:32:48.0249|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) - Validation state: Valid 
+2020-04-07 21:32:48.0249||ERROR|WebApiBattleShip.Controllers.BattleshipController|Sample ExcetionOne of the identified items was in an invalid format. 
+2020-04-07 21:32:48.0249|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.5892ms. 
+2020-04-07 21:32:48.0249|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'null'. 
+2020-04-07 21:32:48.0399|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip) in 9.9301ms 
+2020-04-07 21:32:48.0399|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'WebApiBattleShip.Controllers.BattleshipController.Get (WebApiBattleShip)' 
+2020-04-07 21:32:48.0399|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 22.7079ms 204  
