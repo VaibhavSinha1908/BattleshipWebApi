@@ -72,9 +72,9 @@ This method allows a user to attack a ship by sending the coordinates on the gri
 2. _The ship can added only vertically and horizontally_. The coordinates for adding the ship is only for **ship's head and not it's tail**. Edge cases have been take into consideration and coded in the validation logic.
 3. The attack on the ship can **Miss/Hit/Sink** a ship. _If the attack sinks a ship, the sunk ship is removed from memory and the grid cells occupied by the ship are reset. Therefore, if the next attack is on the same coordinate, the attack will result in a miss._ __After the ship has been sunk, a new ship can be added to the same location.__
 4. All the exceptions and debug information are stored in Nlog logs, as configured in the project. The logs of the project are currently stored at:`c:\temp\battleship\`. This can be modified in nlog.config for the new location. The logs capture all the major milestones of the project.
-5. The project has SSL [https] endpoint but the certificate used is self signed and hence hitting the url will trigger warning messages or interrupt the traffic. The secure url for reference is:
+5. If the user tries to add the ship or attack the ship before the board was created, the response is 400BadRequest with following message: `"The 10x10 board was not created."`. The request does not add the ship or attack the ship. The user must create the board before trying to add or attack the ship.
+6. The user can attack ship even if there are no ships on the board, athough these attacks will result in a miss.
+7. If user wants to reset the game, **the user can fire CreateBoard() request again to reset the game**.
+8. The project has SSL [https] endpoint but the certificate used is self signed and hence hitting the url will trigger warning messages or interrupt the traffic. However, the warning can be ignored and the secure URL can be used:
 <https://ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/swagger/index.html>
-6. Unit testing takes care of all the possible scenarios I could think of in the given time. I potentially could have written more tests for testing out of the box scenarios and others I couldn't think of.
-
-
-
+9. Unit testing takes care of all the possible scenarios I could think of in the given time. I potentially could have written more tests for testing out of the box scenarios and others I couldn't think of.
