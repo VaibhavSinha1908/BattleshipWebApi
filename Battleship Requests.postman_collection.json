@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "19ebff15-4384-495c-b8eb-74e9e85668e1",
+		"name": "Battleship Requests",
+		"description": "This collection has postman calls to all end points of Battleship-WebAPI.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateBoard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/api/battleship/createboard",
+					"host": [
+						"ec2-13-211-139-250",
+						"ap-southeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"battleship",
+						"createboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Addship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verticalHeadPosition\":1,\n\t\"horizontalHeadPosition\": 2,\n\t\"size\": 4,\n\t\"orientation\": \"vertical\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/api/battleship/Addship",
+					"host": [
+						"ec2-13-211-139-250",
+						"ap-southeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"battleship",
+						"Addship"
+					]
+				},
+				"description": "This request adds the ship to the grid."
+			},
+			"response": []
+		},
+		{
+			"name": "Addship_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verticalHeadPosition\":4,\n\t\"horizontalHeadPosition\": 4,\n\t\"size\": 3,\n\t\"orientation\": \"horizontal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/api/battleship/Addship",
+					"host": [
+						"ec2-13-211-139-250",
+						"ap-southeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"battleship",
+						"Addship"
+					]
+				},
+				"description": "This request adds another ship on the board."
+			},
+			"response": []
+		},
+		{
+			"name": "Attackship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verticalPosition\": 1,\n\t\"horizontalPosition\" : 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/api/battleship/AttackShip",
+					"host": [
+						"ec2-13-211-139-250",
+						"ap-southeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"battleship",
+						"AttackShip"
+					]
+				},
+				"description": "This request attacks a ship on the board."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
