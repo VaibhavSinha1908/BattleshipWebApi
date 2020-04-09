@@ -284,5 +284,207 @@ namespace WebApiBattleship.Test
         }
 
 
+        [TestCase("1", "2", "vertical", "2")]
+        public async Task AttackShip_AfterSinkShip_ShouldReturn_MissedShip(string hpos, string vpos, string orientation, string length)
+        {
+            //Arrange
+            await _battleshipService.CreateBoard();
+
+
+            var request = new ShipAddRequest
+            {
+                HorizontalStartingPoint = hpos,
+                VerticalStartingPoint = vpos,
+                Orientation = "vertical",
+                Length = length
+            };
+
+            //Add Ships
+            var resultAddShip = await _battleshipService.AddShip(request);
+
+
+            AttackRequest attackRequest = new AttackRequest();
+            bool attackResult = false;
+            if (orientation == "vertical")
+            {
+                //Attack Ship : Attempt#1
+                attackRequest = new AttackRequest
+                {
+                    HorizontalPosition = hpos,
+                    VerticalPosition = vpos,
+
+                };
+
+                //Act
+                attackResult = await _battleshipService.AttackShip(attackRequest);
+
+
+                //Attack Ship : Attempt#2
+                var newVPos = Convert.ToInt32(vpos);
+                attackRequest = new AttackRequest
+                {
+                    HorizontalPosition = hpos,
+                    VerticalPosition = (++newVPos).ToString(),
+
+                };
+
+                //Act
+                attackResult = await _battleshipService.AttackShip(attackRequest);
+            }
+
+            //Assert
+            Assert.IsTrue(attackResult);
+            Assert.That(_response.Message == ResponseMessages.ATTACK_SUNK_SHIP);
+
+
+
+            attackRequest = new AttackRequest
+            {
+                HorizontalPosition = hpos,
+                VerticalPosition = vpos,
+
+            };
+
+            //Act
+            attackResult = await _battleshipService.AttackShip(attackRequest);
+
+            Assert.IsFalse(attackResult);
+            Assert.That(_response.Message == ResponseMessages.ATTACK_MISS);
+        }
+
+
+
+
+
+        [TestCase("1", "2", "vertical", "2")]
+        public async Task AddShip_AfterSinkShip_ShouldReturn_ShipAdded(string hpos, string vpos, string orientation, string length)
+        {
+            //Arrange
+            await _battleshipService.CreateBoard();
+
+
+            var request = new ShipAddRequest
+            {
+                HorizontalStartingPoint = hpos,
+                VerticalStartingPoint = vpos,
+                Orientation = "vertical",
+                Length = length
+            };
+
+            //Add Ships
+            var resultAddShip = await _battleshipService.AddShip(request);
+
+
+            AttackRequest attackRequest = new AttackRequest();
+            bool attackResult = false;
+            if (orientation == "vertical")
+            {
+                //Attack Ship : Attempt#1
+                attackRequest = new AttackRequest
+                {
+                    HorizontalPosition = hpos,
+                    VerticalPosition = vpos,
+
+                };
+
+                //Act
+                attackResult = await _battleshipService.AttackShip(attackRequest);
+
+
+                //Attack Ship : Attempt#2
+                var newVPos = Convert.ToInt32(vpos);
+                attackRequest = new AttackRequest
+                {
+                    HorizontalPosition = hpos,
+                    VerticalPosition = (++newVPos).ToString(),
+
+                };
+
+                //Act
+                attackResult = await _battleshipService.AttackShip(attackRequest);
+            }
+
+            //Assert
+            Assert.IsTrue(attackResult);
+            Assert.That(_response.Message == ResponseMessages.ATTACK_SUNK_SHIP);
+
+
+            //Act
+            attackResult = await _battleshipService.AttackShip(attackRequest);
+
+            //Add ship
+            request = new ShipAddRequest
+            {
+                HorizontalStartingPoint = hpos,
+                VerticalStartingPoint = vpos,
+                Orientation = "vertical",
+                Length = length
+            };
+            resultAddShip = await _battleshipService.AddShip(request);
+
+
+
+            //Assert if the ship is added.
+            Assert.IsTrue(resultAddShip);
+            Assert.That(_response.Message == ResponseMessages.SHIP_ADDED);
+        }
+
+
+
+        [TestCase("1", "2", "vertical", "2")]
+        [TestCase("3", "4", "horizontal", "5")]
+
+        public async Task AddShip_OnSuccessfulAttack_ShouldReturn_NotAdded(string hpos, string vpos, string orientation, string length)
+        {
+            //Arrange
+            await _battleshipService.CreateBoard();
+
+
+            var request = new ShipAddRequest
+            {
+                HorizontalStartingPoint = hpos,
+                VerticalStartingPoint = vpos,
+                Orientation = "vertical",
+                Length = length
+            };
+
+            //Add Ships.
+            var resultAddShip = await _battleshipService.AddShip(request);
+
+
+            var attackRequest = new AttackRequest
+            {
+                HorizontalPosition = hpos,
+                VerticalPosition = vpos,
+
+            };
+
+            //Act
+            var result = await _battleshipService.AttackShip(attackRequest);
+
+            var remainingLength = _battleshipBoardGame.Ships[0].ShipPosition.Where(x => x.Hit == false).Count();
+
+            //Assert if the attack was successful
+            Assert.IsTrue(result);
+            Assert.That(remainingLength == (Convert.ToInt32(length) - 1));
+
+
+            //Add ship
+
+            request = new ShipAddRequest
+            {
+                HorizontalStartingPoint = hpos,
+                VerticalStartingPoint = vpos,
+                Orientation = "vertical",
+                Length = length
+            };
+
+            //Add Ships.
+            resultAddShip = await _battleshipService.AddShip(request);
+            Assert.IsFalse(resultAddShip);
+            Assert.That(_response.Message == ResponseMessages.SHIP_OVERLAPPING);
+
+        }
+
     }
 }
