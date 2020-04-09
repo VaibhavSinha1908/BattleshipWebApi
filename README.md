@@ -72,7 +72,7 @@ This method allows a user to attack a ship by sending the coordinates on the gri
 2. _The ship can added only vertically and horizontally_. The coordinates for adding the ship is only for **ship's head and not it's tail**. Edge cases have been take into consideration and coded in the validation logic.
 3. The attack on the ship can **Miss/Hit/Sink** a ship. _If the attack sinks a ship, the sunk ship is removed from memory and the grid cells occupied by the ship are reset. Therefore, if the next attack is on the same coordinate, the attack will result in a miss._ __After the ship has been sunk, a new ship can be added to the same location.__
 4. All the exceptions and debug information are stored in Nlog logs, as configured in the project. The logs of the project are currently stored at:`c:\temp\battleship\`. This can be modified in nlog.config for the new location. The logs capture all the major milestones of the project.
-5. The project has SSL [https] endpoint but the certificate used is self signed and hence hitting the url will trigger warning messages or interrupt the traffic. The secure for reference is:
+5. The project has SSL [https] endpoint but the certificate used is self signed and hence hitting the url will trigger warning messages or interrupt the traffic. The secure url for reference is:
 <https://ec2-13-211-139-250.ap-southeast-2.compute.amazonaws.com/swagger/index.html>
 6. Unit testing takes care of all the possible scenarios I could think of in the given time. I potentially could have written more tests for testing out of the box scenarios and others I couldn't think of.
 
