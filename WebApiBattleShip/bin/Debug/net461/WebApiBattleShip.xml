@@ -96,7 +96,7 @@
         </member>
         <member name="P:WebApiBattleShip.Models.Request.ShipAddRequest.Orientation">
             <summary>
-            Orientation of the Ship on the board. (vertical/horizontal)
+            Orientation (vertical/horizontal) of the Ship on the board. [Required] 
             </summary>
         </member>
     </members>
